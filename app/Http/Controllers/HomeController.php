@@ -15,7 +15,6 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        dd($request->input('signed_request'));
         $sfSecretKey = getenv('SFDC_SECRET_KEY', '');
 
         if (!$sfSecretKey || !$sr = $this->verifyAndDecodeAsJson($request->input('signed_request'), $sfSecretKey)) {
@@ -23,11 +22,15 @@ class HomeController extends Controller
             die;
         }
 
-
         $request->session()->put('signedRequest', $sr);
 
 
-        return redirect()->route('heroku');
+        return view('welcome', [
+            'sr' =>  json_encode($sr)
+        ]);
+//        dd($sr->client);
+//
+//        return redirect()->route('heroku');
     }
 
     private function verifyAndDecodeAsJson($signedRequest, $consumer_secret) {
