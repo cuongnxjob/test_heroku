@@ -22,10 +22,10 @@ class HomeController extends Controller
             die;
         }
 
-        $request->session()->put('signedRequest', $sr);
+//        $request->session()->put('signedRequest', $sr);
 
         return view('welcome', [
-            'sr' =>  json_encode($sr)
+            'sr' =>  $sr
         ]);
 //        dd($sr->client);
 //

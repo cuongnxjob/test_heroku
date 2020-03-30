@@ -118,9 +118,8 @@
 
         <!-- init block -->
         <script>
-            var sr = "{!! $sr !!}";
+            var sr = {!! json_encode($sr->toArray()) !!};
             var signedRequest = JSON.parse(sr);
-            console.log(sr);
         </script>
 
         <!-- global var initialization block -->
