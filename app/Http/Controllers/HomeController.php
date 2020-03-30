@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -27,8 +28,11 @@ class HomeController extends Controller
             'sr' => $sr,
             'signedRequest' => $request->input('signed_request')
         ];
-        
+
         $request->session()->put('canvas-info', $sessionData);
+        $canvasInfo = Session::get('canvas-info');
+        $signedRequest = $canvasInfo['signedRequest'];
+        dd($signedRequest);
 
         return view('welcome');
     }
