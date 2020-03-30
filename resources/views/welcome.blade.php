@@ -118,7 +118,7 @@
 
         <!-- init block -->
         <script>
-            var sr = {{ $signedRequest }};
+            var sr = "{{ $signedRequest }}";
             var signedRequest = JSON.parse(sr);
         </script>
 
