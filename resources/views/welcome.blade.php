@@ -118,8 +118,9 @@
 
         <!-- init block -->
         <script>
-            var sr = "{{ $sr }}";
+            var sr = "{!! $sr !!}";
             var signedRequest = JSON.parse(sr);
+            console.log(sr);
         </script>
 
         <!-- global var initialization block -->

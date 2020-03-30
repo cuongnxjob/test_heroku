@@ -24,7 +24,6 @@ class HomeController extends Controller
 
         $request->session()->put('signedRequest', $sr);
 
-
         return view('welcome', [
             'sr' =>  json_encode($sr)
         ]);
