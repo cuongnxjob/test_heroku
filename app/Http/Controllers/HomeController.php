@@ -25,7 +25,7 @@ class HomeController extends Controller
 //        $request->session()->put('signedRequest', $sr);
 
         return view('welcome', [
-            'sr' =>  $sr
+            'sr' => (array) $sr
         ]);
 //        dd($sr->client);
 //

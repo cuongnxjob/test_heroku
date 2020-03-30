@@ -118,7 +118,7 @@
 
         <!-- init block -->
         <script>
-            var sr = {!! json_encode($sr->toArray()) !!};
+            var sr = {!! json_encode($sr) !!};
             var signedRequest = JSON.parse(sr);
         </script>
 
