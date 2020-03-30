@@ -22,15 +22,14 @@ class HomeController extends Controller
             die;
         }
 
-//        $request->session()->put('signedRequest', $sr);
+        $client = $sr->client;
 
         return view('welcome', [
             'sr' => $sr,
-            'client' => $sr->client,
+            'client'    => $client
         ]);
-//        dd($sr->client);
-//
-//        return redirect()->route('heroku');
+
+
     }
 
     private function verifyAndDecodeAsJson($signedRequest, $consumer_secret) {
