@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('canvas-js-sdk/css/canvas.css') }}" />
-        <link href="{{ asset('canvas-js-sdk/js/canvas-all.js') }}" rel="stylesheet">
+        <script src="{{ asset('canvas-js-sdk/js/canvas-all.js') }}"></script>
 
         <!-- Styles -->
         <style>
@@ -102,11 +102,15 @@
                 // Not in Iframe
                 alert("This canvas app must be included within an iframe");
             }
-            Sfdc.canvas(function() {
-                var sr = JSON.parse('<%=signedRequestJson%>');
-                // Save the token
-                Sfdc.canvas.oauth.token(sr.oauthToken);
-                Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+
+            Sfdc.canvas.onReady(function () {
+                console.log("Canvas application ready");
+                Sfdc.canvas(function() {
+                    var sr = JSON.parse('<%=signedRequestJson%>');
+                    // Save the token
+                    Sfdc.canvas.oauth.token(sr.oauthToken);
+                    Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+                });
             });
         </script>
     </body>
