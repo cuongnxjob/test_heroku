@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('canvas-js-sdk/css/canvas.css') }}" />
         <script src="{{ asset('canvas-js-sdk/js/canvas-all.js') }}"></script>
+        <script src="/canvas-js-sdk/js/canvas-all.js"></script>
 
         <!-- Styles -->
         <style>
