@@ -118,10 +118,9 @@
 
         <!-- init block -->
         <script>
-
-            {{--var sr = {!! json_encode($sr->toArray()) !!};--}}
-            {{--var signedRequest = JSON.parse(sr);--}}
-
+            var client = "{!! json_encode($client) !!}";
+            console.log(client);
+            // var signedRequest = JSON.parse('<%=signedRequestJson%>');
         </script>
 
         <!-- global var initialization block -->
@@ -133,15 +132,13 @@
 
         <!-- publish block -->
         <script>
-            let clientData = "{{ $client }}";
-            let client = JSON.parse(clientData);
-            function canvasPublish(message) {
-                Sfdc.canvas.client.publish( client,{
-                    name :  namespacePrefix  + canvasTopic,
-                    payload : message
-                });
-                console.log(' canvas published : ' + message + ' to ' + canvasTopic );
-            }
+            // function canvasPublish(message) {
+            //     Sfdc.canvas.client.publish( signedRequest.client,{
+            //         name :  namespacePrefix  + canvasTopic,
+            //         payload : message
+            //     });
+            //     console.log(' canvas published : ' + message + ' to ' + canvasTopic );
+            // }
         </script>
     </body>
 </html>
