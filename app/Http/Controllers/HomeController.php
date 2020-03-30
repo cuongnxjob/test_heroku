@@ -26,7 +26,7 @@ class HomeController extends Controller
 
         return view('welcome', [
             'sr' => $sr,
-            'client'    => $client
+            'client'    => (array) $client
         ]);
 
 

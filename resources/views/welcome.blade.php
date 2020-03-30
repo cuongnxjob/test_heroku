@@ -133,7 +133,7 @@
 
         <!-- publish block -->
         <script>
-            let clientData = {{ json_encode($client) }};
+            let clientData = "{!! json_decode($client) !!}" ;
             let client = JSON.parse(clientData);
             function canvasPublish(message) {
                 Sfdc.canvas.client.publish( client,{
