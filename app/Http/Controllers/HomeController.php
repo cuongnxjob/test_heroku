@@ -14,12 +14,15 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
+        dd($request->input('signed_request'));
         $sfSecretKey = getenv('SFDC_SECRET_KEY', '');
 
         if (!$sfSecretKey || !$sr = $this->verifyAndDecodeAsJson($request->input('signed_request'), $sfSecretKey)) {
             echo "Error: Signed Request or Consumer Secret not found";
             die;
         }
+
+        
 
         $sessionData = [
             'sr' => $sr,
