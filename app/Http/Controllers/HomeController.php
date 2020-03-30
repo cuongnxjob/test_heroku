@@ -14,7 +14,6 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        dd($request->input('signed_request'));
         $sfSecretKey = getenv('SFDC_SECRET_KEY', '');
 
         if (!$sfSecretKey || !$sr = $this->verifyAndDecodeAsJson($request->input('signed_request'), $sfSecretKey)) {
@@ -22,14 +21,13 @@ class HomeController extends Controller
             die;
         }
 
-        
+
 
         $sessionData = [
             'sr' => $sr,
             'signedRequest' => $request->input('signed_request')
         ];
-
-        dd($sessionData);
+        
         $request->session()->put('canvas-info', $sessionData);
 
         return view('welcome');
