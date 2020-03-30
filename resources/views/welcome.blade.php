@@ -116,6 +116,13 @@
             });
         </script>
 
+        <!-- init block -->
+        <script>
+            var client = {!! $client !!};
+            console.log(client);
+            // var signedRequest = JSON.parse(sr);
+        </script>
+
         <!-- global var initialization block -->
         <script>
             var namespacePrefix = '';
@@ -125,7 +132,8 @@
 
         <!-- publish block -->
         <script>
-            var client = {!! $client !!};
+            var clientData = {!! $client !!};
+            var client = JSON.parse(clientData);
             function canvasPublish(message) {
                 Sfdc.canvas.client.publish( client,{
                     name :  namespacePrefix  + canvasTopic,
