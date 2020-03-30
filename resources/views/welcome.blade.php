@@ -114,5 +114,28 @@
                 });
             });
         </script>
+
+        <!-- init block -->
+        <script>
+            var signedRequest = JSON.parse('<%=signedRequestJson%>');
+        </script>
+
+        <!-- global var initialization block -->
+        <script>
+            var namespacePrefix = '';
+            var vfTopic = 'vfTopic';
+            var canvasTopic = 'canvasTopic';
+        </script>
+
+        <!-- publish block -->
+        <script>
+            function canvasPublish(message) {
+                Sfdc.canvas.client.publish( signedRequest.client,{
+                    name :  namespacePrefix  + canvasTopic,
+                    payload : message
+                });
+                console.log(' canvas published : ' + message + ' to ' + canvasTopic );
+            }
+        </script>
     </body>
 </html>
