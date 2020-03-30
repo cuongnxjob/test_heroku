@@ -118,8 +118,9 @@
 
         <!-- init block -->
         <script>
-            var sr = {!! json_encode($sr) !!};
-            var signedRequest = JSON.parse(sr);
+            var client = {!! $client !!};
+            console.log(client);
+            // var signedRequest = JSON.parse(sr);
         </script>
 
         <!-- global var initialization block -->
@@ -132,10 +133,10 @@
         <!-- publish block -->
         <script>
             function canvasPublish(message) {
-                Sfdc.canvas.client.publish( signedRequest.client,{
-                    name :  namespacePrefix  + canvasTopic,
-                    payload : message
-                });
+                // Sfdc.canvas.client.publish( signedRequest.client,{
+                //     name :  namespacePrefix  + canvasTopic,
+                //     payload : message
+                // });
                 console.log(' canvas published : ' + message + ' to ' + canvasTopic );
             }
         </script>

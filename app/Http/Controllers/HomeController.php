@@ -22,8 +22,11 @@ class HomeController extends Controller
             die;
         }
 
+        $client = (array) ($sr->client);
+
         return view('welcome', [
-            'sr' => (array) $sr
+            'sr'        => $sr,
+            'client'    => json_encode ($client)
         ]);
 
 
