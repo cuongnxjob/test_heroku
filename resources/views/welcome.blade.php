@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('canvas-js-sdk/css/canvas.css') }}" />
+        <link href="{{ asset('canvas-js-sdk/js/canvas-all.js') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -95,5 +97,17 @@
                 </div>
             </div>
         </div>
+        <script>
+            if (self === top) {
+                // Not in Iframe
+                alert("This canvas app must be included within an iframe");
+            }
+            Sfdc.canvas(function() {
+                var sr = JSON.parse('<%=signedRequestJson%>');
+                // Save the token
+                Sfdc.canvas.oauth.token(sr.oauthToken);
+                Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+            });
+        </script>
     </body>
 </html>
