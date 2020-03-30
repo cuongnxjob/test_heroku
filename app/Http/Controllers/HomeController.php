@@ -22,19 +22,8 @@ class HomeController extends Controller
             die;
         }
 
-        $client = $sr->client;
-//        $stringClient = json_encode($client);
-//        foreach ($client as $key => $value) {
-//            echo $key;
-//            echo '<br>';
-//            echo $value;
-//
-//        }
-//        dd((array) json_decode($stringClient));
-
         return view('welcome', [
-            'sr'        => $sr,
-            'client'    => (array) $client
+            'sr' => (array) $sr
         ]);
 
 
