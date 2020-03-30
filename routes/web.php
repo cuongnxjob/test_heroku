@@ -21,6 +21,7 @@ Route::get('/', function () {
 //    return view('welcome');
 //})->name('test');
 
-Route::any('test/heroku', 'HomeController@index')->name('heroku');
+Route::any('test/heroku', 'HomeController@index');
+Route::any('test/welcome', 'HomeController@welcome')->name('heroku');
 
 

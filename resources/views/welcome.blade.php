@@ -106,6 +106,7 @@
             Sfdc.canvas.onReady(function () {
                 console.log("Canvas application ready");
                 Sfdc.canvas(function() {
+                    // var sr = JSON.parse('<%=signedRequestJson%>');
                     var sr = JSON.parse('<%=signedRequestJson%>');
                     console.log(sr);
                     // Save the token
@@ -117,7 +118,8 @@
 
         <!-- init block -->
         <script>
-            var signedRequest = JSON.parse('<%=signedRequestJson%>');
+            var sr = {{ $signedRequest }};
+            var signedRequest = JSON.parse(sr);
         </script>
 
         <!-- global var initialization block -->

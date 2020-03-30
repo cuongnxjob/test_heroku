@@ -22,19 +22,9 @@ class HomeController extends Controller
             die;
         }
 
+        $request->session()->put('signedRequest', $request->input('signed_request'));
 
-
-        $sessionData = [
-            'sr' => $sr,
-            'signedRequest' => $request->input('signed_request')
-        ];
-
-        $request->session()->put('canvas-info', $sessionData);
-        $canvasInfo = Session::get('canvas-info');
-        $signedRequest = $canvasInfo['signedRequest'];
-        dd($signedRequest);
-
-        return view('welcome');
+        return redirect()->route('heroku');
     }
 
     private function verifyAndDecodeAsJson($signedRequest, $consumer_secret) {
@@ -49,5 +39,12 @@ class HomeController extends Controller
         //decode the signed request object
         $sr = base64_decode($encodedEnv);
         return json_decode($sr);
+    }
+
+    public function welcome() {
+        $signedRequest = Session::get('signedRequest');
+        return view('welcome', [
+            'signedRequest' => $signedRequest
+        ]);
     }
 }
