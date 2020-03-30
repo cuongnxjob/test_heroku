@@ -132,8 +132,8 @@
 
         <!-- publish block -->
         <script>
-            var clientData = {!! $client !!};
-            var client = JSON.parse(clientData);
+            {{--var clientData = {!! $client !!};--}}
+            // var client = JSON.parse(clientData);
             function canvasPublish(message) {
                 Sfdc.canvas.client.publish( client,{
                     name :  namespacePrefix  + canvasTopic,
