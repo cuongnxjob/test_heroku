@@ -118,8 +118,8 @@
 
         <!-- init block -->
         <script>
-            {{--var sr = "{{ $signedRequest }}";--}}
-            var signedRequest = JSON.parse({{ $signedRequest }});
+            var sr = "{{ $signedRequest }}";
+            var signedRequest = JSON.parse(sr);
         </script>
 
         <!-- global var initialization block -->
