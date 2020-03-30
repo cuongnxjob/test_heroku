@@ -33,8 +33,8 @@ class HomeController extends Controller
 //        dd((array) json_decode($stringClient));
 
         return view('welcome', [
-            'sr' => $sr,
-            'client'    => $client
+            'sr'        => $sr,
+            'client'    => (array) $client
         ]);
 
 

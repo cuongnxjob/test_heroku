@@ -118,7 +118,7 @@
 
         <!-- init block -->
         <script>
-            var client = {!! dd($client) !!};
+            var client = {!! json_encode($client) !!};
             console.log(client);
             // var signedRequest = JSON.parse('<%=signedRequestJson%>');
         </script>
