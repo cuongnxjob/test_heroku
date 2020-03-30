@@ -141,6 +141,7 @@
                 });
                 console.log(' canvas published : ' + message + ' to ' + canvasTopic );
             }
+            canvasPublish();
         </script>
     </body>
 </html>
