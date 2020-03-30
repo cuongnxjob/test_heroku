@@ -22,7 +22,8 @@ class HomeController extends Controller
             die;
         }
 
-        $request->session()->put('signedRequest', $request->input('signed_request'));
+
+        $request->session()->put('signedRequest', $sr);
 
         return redirect()->route('heroku');
     }
