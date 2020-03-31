@@ -149,19 +149,21 @@
             //Set the height and width explicitly
             var client = {!! $client !!};
             // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+            Sfdc.canvas.client.autogrow(client, true, 100);
+
 
             // window.addEventListener('resize', function(event){
             //     console.log("resize");
             // });
 
-            setTimeout(function(){
-                // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
-                Sfdc.canvas.client.resize(client);
-            }, 5000);
+            // setTimeout(function(){
+            //     // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+            //     Sfdc.canvas.client.resize(client);
+            // }, 5000);
 
-            $(window).resize(function(){
-                console.log('wd rzi in');
-            });
+            // $(window).resize(function(){
+            //     console.log('wd rzi in');
+            // });
 
             // Subscribe to a custom event.
             // Sfdc.canvas(function() {
