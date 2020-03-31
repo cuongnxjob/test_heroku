@@ -118,8 +118,8 @@
 
         <!-- init block -->
         <script>
-            var client = {!! $client !!};
-            console.log(client);
+            {{--var client = {!! $client !!};--}}
+            // console.log(client);
             // var signedRequest = JSON.parse(sr);
         </script>
 
@@ -134,14 +134,20 @@
         <script>
             var message = "hello world";
             // var client = JSON.parse(clientData);
-            function canvasPublish(message) {
-                Sfdc.canvas.client.publish( client,{
-                    name :  namespacePrefix  + canvasTopic,
-                    payload : message
-                });
-                console.log(' canvas published : ' + message + ' to ' + canvasTopic );
-            }
-            canvasPublish();
+            // function canvasPublish(message) {
+            //     Sfdc.canvas.client.publish( client,{
+            //         name :  namespacePrefix  + canvasTopic,
+            //         payload : message
+            //     });
+            //     console.log(' canvas published : ' + message + ' to ' + canvasTopic );
+            // }
+            // canvasPublish();
+
+            //Set the height and width explicitly
+            var client = {!! $client !!};
+            Sfdc.canvas.client.resize( client, {height : "1000px", width : "900px"});
+
+
         </script>
     </body>
 </html>
