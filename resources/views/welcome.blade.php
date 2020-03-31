@@ -157,8 +157,8 @@
             // });
 
             setTimeout(function(){
-                // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
-                Sfdc.canvas.client.resize(client);
+                Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+                // Sfdc.canvas.client.resize(client);
             }, 5000);
 
             // $(window).resize(function(){
