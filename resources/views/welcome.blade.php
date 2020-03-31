@@ -155,8 +155,19 @@
             // });
 
             setTimeout(function(){
-                Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+                // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+                Sfdc.canvas.client.resize(client);
             }, 5000);
+
+            // Subscribe to a custom event.
+            // Sfdc.canvas(function() {
+            //     sr = JSON.parse('<%=signedRequestJson%>');
+                Sfdc.canvas.client.subscribe(client,
+                    {name : 'hello.world', onData : function (event) {
+                            console.log("Got custom event ",  event);
+                    }}
+                );
+            // });
 
         </script>
     </body>
