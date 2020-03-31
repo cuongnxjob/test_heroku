@@ -132,7 +132,7 @@
 
         <!-- publish block -->
         <script>
-            {{--var clientData = {!! $client !!};--}}
+            var message = "hello world";
             // var client = JSON.parse(clientData);
             function canvasPublish(message) {
                 Sfdc.canvas.client.publish( client,{
