@@ -159,6 +159,10 @@
                 Sfdc.canvas.client.resize(client);
             }, 5000);
 
+            $(window).resize(function(){
+                console.log('wd rzi in');
+            });
+
             // Subscribe to a custom event.
             // Sfdc.canvas(function() {
             //     sr = JSON.parse('<%=signedRequestJson%>');
