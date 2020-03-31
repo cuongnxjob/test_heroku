@@ -10,7 +10,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('canvas-js-sdk/css/canvas.css') }}" />
         <script src="{{ asset('canvas-js-sdk/js/canvas-all.js') }}"></script>
-
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -147,9 +150,13 @@
             var client = {!! $client !!};
             // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
 
-            window.addEventListener('resize', function(event){
-                console.log("resize");
-            });
+            // window.addEventListener('resize', function(event){
+            //     console.log("resize");
+            // });
+
+            setTimeout(function(){
+                Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+            }, 5000);
 
         </script>
     </body>
