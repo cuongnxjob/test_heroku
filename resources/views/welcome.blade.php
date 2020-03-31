@@ -161,9 +161,10 @@
             //     Sfdc.canvas.client.resize(client);
             // }, 5000);
 
-            // $(window).resize(function(){
-            //     console.log('wd rzi in');
-            // });
+            $(window).resize(function(){
+                console.log('wd rzi in');
+                Sfdc.canvas.client.resize(client);
+            });
 
             // Subscribe to a custom event.
             // Sfdc.canvas(function() {
