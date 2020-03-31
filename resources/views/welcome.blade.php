@@ -156,15 +156,15 @@
             //     console.log("resize");
             // });
 
-            // setTimeout(function(){
-            //     // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
-            //     Sfdc.canvas.client.resize(client);
-            // }, 5000);
-
-            $(window).resize(function(){
-                console.log('wd rzi in');
+            setTimeout(function(){
+                // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
                 Sfdc.canvas.client.resize(client);
-            });
+            }, 5000);
+
+            // $(window).resize(function(){
+            //     console.log('wd rzi in');
+            //     Sfdc.canvas.client.resize(client);
+            // });
 
             // Subscribe to a custom event.
             // Sfdc.canvas(function() {
