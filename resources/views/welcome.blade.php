@@ -145,8 +145,11 @@
 
             //Set the height and width explicitly
             var client = {!! $client !!};
-            Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
+            // Sfdc.canvas.client.resize( client, {height : "500px", width : "200px"});
 
+            window.addEventListener('resize', function(event){
+                console.log("resize");
+            });
 
         </script>
     </body>
